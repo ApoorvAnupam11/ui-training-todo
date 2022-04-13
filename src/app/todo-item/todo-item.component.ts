@@ -17,13 +17,13 @@ import { TodoItem, TodoItemWithChanges } from '../interfaces/todo-item';
       >
         {{ item.title }}
       </span>
-      <button class="btn btn-red" (click)="removeItem()">remove</button>
+      <button class="btn btn-red" (click)="removeItem()">delete</button>
     </div>
   `,
   styleUrls: ['./todo-item.component.css'],
 })
 export class TodoItemComponent {
-  @Input() item: TodoItem ={title: "", completed: false};
+  @Input() item: TodoItem = { title: "", completed: false };
   @Output()
   remove: EventEmitter<TodoItem> = new EventEmitter<TodoItem>();
   @Output()
